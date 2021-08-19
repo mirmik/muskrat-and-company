@@ -1,0 +1,1 @@
+zip docs/muskrat-and-company.zip images/*
