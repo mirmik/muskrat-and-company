@@ -50,7 +50,7 @@ def page_generate(path, title, mdpath):
 
 	with header:
 		with dominate.tags.h1():
-			dominate.tags.a("MuskratAndCompany", href="index.html", cls="header_ref")
+			dominate.tags.a("Выхухоль и Ко", href="index.html", cls="header_ref")
 
 		dominate.tags.a("Главная", href="index.html")
 		dominate.tags.a("Мироскоп", href="enchantment.html")
