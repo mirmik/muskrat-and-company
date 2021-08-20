@@ -73,6 +73,7 @@ def page_generate(path, title, mdpath):
 
 	build_file(path, page)
 
+shutil.rmtree("docs")
 
 # Подготавка файлов русской версии.
 for f in os.listdir("text"):
