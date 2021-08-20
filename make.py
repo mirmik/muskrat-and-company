@@ -46,7 +46,7 @@ def page_generate(path, title, mdpath):
 	article = content.add(dominate.tags.article(cls="article"))
 
 	with page.head:
-		dominate.tags.link(rel="stylesheet", href="../main.css")
+		dominate.tags.link(rel="stylesheet", href="main.css")
 
 	with header:
 		with dominate.tags.h1():
