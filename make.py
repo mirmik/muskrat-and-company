@@ -9,13 +9,13 @@ import sys
 import json
 
 def build_file(path, doc):
-    dirpath = os.path.join("docs", os.path.dirname(path))
-    if not os.path.exists(dirpath):
-        os.makedirs(dirpath)
+	dirpath = os.path.join("docs", os.path.dirname(path))
+	if not os.path.exists(dirpath):
+		os.makedirs(dirpath)
 
-    f = open(os.path.join("docs", path), "w")
-    f.write(str(doc))
-    f.close()
+	f = open(os.path.join("docs", path), "w")
+	f.write(str(doc))
+	f.close()
 
 def convert_line(line):
 	if (line.startswith("//sticker")):
@@ -52,10 +52,18 @@ def page_generate(path, title, mdpath):
 		with dominate.tags.h1():
 			dominate.tags.a("Выхухоль и Ко", href="index.html", cls="header_ref")
 
-		dominate.tags.a("Главная", href="index.html")
-		dominate.tags.a("Мироскоп", href="enchantment.html")
-		dominate.tags.a("Бестиарий", href="creatures.html")
-		dominate.tags.a("Артефакты", href="artefacts.html")
+		with dominate.tags.a(
+			"View on GitHub",
+			href="https://github.com/mirmik/muskrat-and-company",
+			cls="btn btn-github",
+		):
+			dominate.tags.span(cls="icon")
+
+		with dominate.tags.p():
+			dominate.tags.a("Главная", href="index.html", cls="header_ref2")
+			dominate.tags.a("Мироскоп", href="enchantment.html", cls="header_ref2")
+			dominate.tags.a("Бестиарий", href="creatures.html", cls="header_ref2")
+			dominate.tags.a("Артефакты", href="artefacts.html", cls="header_ref2")
 
 	with article:
 		dominate.util.raw(
@@ -76,6 +84,7 @@ for f in os.listdir("text"):
 	)
 
 shutil.copytree("images", "docs/images", dirs_exist_ok=True)
+shutil.copytree("internal", "docs/images", dirs_exist_ok=True)
 shutil.copyfile("main.css", "docs/main.css")
 
 os.system("./archive.sh")
