@@ -20,16 +20,6 @@
 	padding: 1em;
 }
 
-.nav {
-	float: left;
-	background-color: white;
-	max-width: 240px;
-	margin: 0;
-	padding: 1em;
-  	font-family: Helvetica, Arial, sans-serif;
-  	font-size: 13px;
-}
-
 .nav ul 
 {
 	padding-left: 2em;
@@ -68,7 +58,7 @@ pre
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 50em;
+	max-width: 60em;
 	text-align: justify;
 }
 

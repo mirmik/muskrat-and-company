@@ -6,6 +6,7 @@ import markdown2
 import shutil
 import os
 import sys
+import json
 
 def build_file(path, doc):
     dirpath = os.path.join("docs", os.path.dirname(path))
@@ -16,8 +17,21 @@ def build_file(path, doc):
     f.write(str(doc))
     f.close()
 
+def convert_line(line):
+	if (line.startswith("//sticker")):
+		line = line[10:]
+		dct = json.loads(line)
+		line = f' <a href="{dct["img"]}"><img src="{dct["img"]}" style="width:300px;"/></a>'
+		return line
+
+	return line
+
 def page_generate(path, title, mdpath):
 	lines = open(mdpath).readlines()
+
+	for i in range(len(lines)):
+		lines[i] = convert_line(lines[i])
+
 	text = "\n".join(lines)
 
 	page = dominate.document(title=title)
@@ -38,9 +52,9 @@ def page_generate(path, title, mdpath):
 		with dominate.tags.h1():
 			dominate.tags.a("MuskratAndCompany", href="index.html", cls="header_ref")
 
-		dominate.tags.a("Действия", href="actions.html")
+		dominate.tags.a("Мироскоп", href="enchantment.html")
 		dominate.tags.a("Бестиарий", href="creatures.html")
-		dominate.tags.a("События и ситуации", href="events.html")
+		dominate.tags.a("Артефакты", href="artefacts.html")
 
 	with article:
 		dominate.util.raw(
