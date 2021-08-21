@@ -19,3 +19,4 @@
 //sticker {"img":"images/troll.jpg"}
 //sticker {"img":"images/frog.jpg"}
 //sticker {"img":"images/power-of-idiocy.jpg"}
+//sticker {"img":"images/puppet.jpg"}
