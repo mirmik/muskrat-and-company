@@ -14,3 +14,4 @@
 //sticker {"img":"images/portal.jpg"}
 //sticker {"img":"images/realityanchor.jpg"}
 //sticker {"img":"images/textcat.jpg"}
+//sticker {"img":"images/find.jpg"}
