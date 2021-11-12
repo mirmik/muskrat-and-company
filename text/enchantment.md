@@ -19,3 +19,4 @@
 //sticker {"img":"images/nosurrenden.jpg"}
 //sticker {"img":"images/speakers-only.jpg"}
 //sticker {"img":"images/teatime.jpg"}
+//sticker {"img":"images/jakor.jpg"}
